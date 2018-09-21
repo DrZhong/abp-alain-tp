@@ -1,0 +1,27 @@
+<div class="modal-header">
+  <div class="modal-title">
+    <span *ngIf="id">修改角色</span>
+    <span *ngIf="!id">新增角色</span>
+  </div>
+</div>
+<nz-spin *ngIf="!entity" class="modal-spin"></nz-spin>
+<nz-tabset>
+  <nz-tab nzTitle="基本信息">
+
+    <sf #sf *ngIf="entity" mode="edit" [schema]="schema" [ui]="ui" [formData]="entity" button="none">
+      <!-- <div class="modal-footer">
+        <button nz-button type="button" (click)="close()">关闭</button>
+        <button nz-button type="submit" [nzType]="'primary'" (click)="save(sf.value)" [disabled]="!sf.valid" [nzLoading]="saving">保存</button>
+      </div> -->
+    </sf>
+  </nz-tab>
+  <nz-tab nzTitle="权限">
+    <nz-tree #permisionTree [(ngModel)]="nodes" (nzCheckBoxChange)="treeCheckboxChange($event)" [nzCheckable]="true" [nzMultiple]="true"
+      [nzCheckStrictly]="true" [nzDefaultCheckedKeys]="checkedKeys">
+    </nz-tree>`
+  </nz-tab>
+</nz-tabset>
+<div class="modal-footer">
+  <button nz-button type="button" (click)="close()">关闭</button>
+  <button nz-button type="submit" [nzType]="'primary'" (click)="save(sf)" [nzLoading]="saving">保存</button>
+</div>

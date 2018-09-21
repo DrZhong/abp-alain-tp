@@ -12,6 +12,7 @@ import { ArrayService } from '@delon/util';
 
 import { STColumn, STColumnButton, STPage, STChange } from '@delon/abc';
 import { rename } from 'fs';
+import { CreatOrUpdateRoleComponent } from '@app/admin/roles/creat-or-update-role/creat-or-update-role.component';
 
 @Component({
   selector: 'app-roles',
@@ -74,7 +75,6 @@ export class RolesComponent extends PagedListingComponentBase<RoleDto> {
           click: (record: any) => {
             this.createOrUpdate(record)
           }
-          //this.edit(record)
         },
         {
           text: '更多',
@@ -108,25 +108,25 @@ export class RolesComponent extends PagedListingComponentBase<RoleDto> {
   }
 
   createOrUpdate(item: RoleDto) {
-    // this.modalHelper
-    //   .open(CreatOrUpdateRoleComponent, item)
-    //   .subscribe(isSave => {
-    //     if (isSave) {
-    //       this.refresh();
-    //     }
-    //   });
+    this.modalHelper
+      .open(CreatOrUpdateRoleComponent, item)
+      .subscribe(isSave => {
+        if (isSave) {
+          this.refresh();
+        }
+      });
   }
 
   create(): void {
-    // this.modalHelper
-    //   .open(CreateRoleComponent, {}, 'md', {
-    //     nzMask: true,
-    //   })
-    //   .subscribe(isSave => {
-    //     if (isSave) {
-    //       this.refresh();
-    //     }
-    //   });
+    this.modalHelper
+      .open(CreatOrUpdateRoleComponent, {}, 'md', {
+        nzMask: true,
+      })
+      .subscribe(isSave => {
+        if (isSave) {
+          this.refresh();
+        }
+      });
   }
 
   edit(item: RoleDto): void {
