@@ -1,0 +1,71 @@
+<div class="alain-default__header-logo">
+  <a [routerLink]="['/']" class="alain-default__header-logo-link">
+    <img class="alain-default__header-logo-expanded" src="./assets/images/logos/logo-52abp.svg" alt="{{settings.app.name}}" style="max-height:40px;"
+    />
+    <img class="alain-default__header-logo-collapsed" src="./assets/images/logos/52abplogo-white.svg" alt="{{settings.app.name}}"
+      style="max-height:30px;" />
+  </a>
+</div>
+<div class="alain-default__nav-wrap">
+  <ul class="alain-default__nav">
+    <!-- Menu -->
+    <li>
+      <div class="alain-default__nav-item" (click)="toggleCollapsedSideabar()">
+        <i class="anticon anticon-menu-{{settings.layout.collapsed ? 'unfold' : 'fold'}}"></i>
+      </div>
+    </li>
+  </ul>
+  <header-search class="alain-default__search" [toggleChange]="searchToggleStatus"></header-search>
+  <ul class="alain-default__nav">
+    <header-languageswitch></header-languageswitch>
+
+    <li class="hidden-xs">
+      <nz-dropdown nzTrigger="click" nzPlacement="bottomRight">
+        <div class="item" nz-dropdown>
+          <i class="anticon anticon-setting"></i>
+        </div>
+        <div nz-menu style="width:200px;">
+          <div nz-menu-item>
+            <header-fullscreen></header-fullscreen>
+          </div>
+          <div nz-menu-item>
+            <header-storage></header-storage>
+          </div>
+        </div>
+      </nz-dropdown>
+    </li>
+
+    <li class="hidden-xs">
+      <header-user></header-user>
+    </li>
+  </ul>
+</div>
+
+<!-- 
+<div style="right:10px;position: fixed;">
+  <ul class="top-nav">
+
+    <header-languageswitch></header-languageswitch>
+
+    <li class="hidden-xs">
+      <nz-dropdown nzTrigger="click" nzPlacement="bottomRight">
+        <div class="item" nz-dropdown>
+          <i class="anticon anticon-setting"></i>
+        </div>
+        <div nz-menu style="width:200px;">
+          <div nz-menu-item>
+            <header-fullscreen></header-fullscreen>
+          </div>
+          <div nz-menu-item>
+            <header-storage></header-storage>
+          </div>
+        </div>
+      </nz-dropdown>
+    </li>
+
+    <li class="hidden-xs">
+      <header-user></header-user>
+    </li>
+
+  </ul>
+</div> -->
