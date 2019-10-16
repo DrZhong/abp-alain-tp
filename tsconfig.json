@@ -1,29 +1,64 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "src/",
+    "downlevelIteration": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
+    "module": "esnext",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "baseUrl": "src/",
     "paths": {
-      "@appshared": ["app/shared"],
-      "@appshared/*": ["app/shared/*"],
-      "@core": ["app/core"],
-      "@core/*": ["app/core/*"],
-      "@testing": ["testing"],
-      "@testing/*": ["testing/*"],
-      "@env": ["environments"],
-      "@env/*": ["environments/*"],
-      "@shared": ["shared"],
-      "@shared/*": ["shared/*"],
-      "@abp/*": ["../node_modules/abp-ng2-module/dist/src/*"],
-      "@app/*": ["./app/*"],
+      "@appshared": [
+        "app/shared"
+      ],
+      "@appshared/*": [
+        "app/shared/*"
+      ],
+      "@core": [
+        "app/core"
+      ],
+      "@core/*": [
+        "app/core/*"
+      ],
+      "@testing": [
+        "testing"
+      ],
+      "@testing/*": [
+        "testing/*"
+      ],
+      "@env": [
+        "environments"
+      ],
+      "@env/*": [
+        "environments/*"
+      ],
+      "@shared": [
+        "shared"
+      ],
+      "@shared/*": [
+        "shared/*"
+      ],
+      "@abp/*": [
+        "../node_modules/abp-ng2-module/dist/src/*"
+      ],
+      "@app/*": [
+        "./app/*"
+      ],
+      "echarts": [
+        "node_modules/echarts/dist/echarts.min.js"
+      ]
     }
   }
 }
